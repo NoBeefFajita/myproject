@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="signup">
+
+   <select id="emailchk" resultType="int">
+      select count(email)
+      from member
+      where email LIKE #{email}
+   </select>
+
+   <select id="idchk" resultType="int">
+      select count(userid)
+      from member
+      where userid LIKE #{id}
+   </select>
+
+   <select id="insert">
+      insert into member
+      (code, userid, pw, name, email, admin, birth) 
+      values
+      ( (select rpad(lpad(substr(max(code),1,3)+1,3,'0'),4,'a') from member)
+      ,#{userName},#{pw},#{fullName}
+      ,#{email},'n',#{birth} )
+   </select>
+   
+   <select id="insert">
+      insert into member
+      (code, userid, pw, name, email, admin, birth) 
+      values
+      ( (select rpad(lpad(substr(max(code),1,3)+1,3,'0'),4,'a') from member)
+      ,#{userName},#{pw},#{fullName}
+      ,#{email},'n',#{birth} )
+   </select>
+   
+   <!-- <select id="login" resultType="String">
+      select userid
+      from member
+      where userid like #{userName} and like #{pw}
+   </select>
+
+   <select id="loginE" resultType="String">
+      select email
+      from member
+      where email like #{email} and like #{pw}
+   </select> -->
+</mapper>

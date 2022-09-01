@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <img src="" alt="dd">
+    <main>
+        <div>
+        </div>
+        <p></p>
+    </main>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <img src="" alt="" draggable="false">
+<script>
+//     const section = document.querySelectorAll("section");
+//     let sectionCnt = section.length;
+//     console.log(sectionCnt);
+//     // sessionStorage.setItem("te",11);
+//     let scrollHeight = Math.max(
+//   document.body.scrollHeight, document.documentElement.scrollHeight,
+//   document.body.offsetHeight, document.documentElement.offsetHeight,
+//   document.body.clientHeight, document.documentElement.clientHeight
+// );
+
+// alert('스크롤에 의해 가려진 분을 포함한 전체 문서 높이: ' + scrollHeight);
+
+//     const footer = document.querySelector("footer");
+//     addEventListener('scroll',() =>{
+//         console.log(window.pag);
+//         // console.log(scrollY);
+//     })
+    const text = document.querySelector("textarea");
+    const main = document.querySelector("main");
+    console.log(main.firstChild.nextSibling);
+    console.log(main.lastChild.previousSibling);
+    text.addEventListener("change", ()=> {
+        let textv = text.value.trim();
+        console.log(text.value);
+        console.log(textv);
+        console.log(textv.length);
+    });
+
+    const img = document.querySelector("img");
+    console.log(img.alt);
+</script>
+</body>
+</html>
